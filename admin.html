@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração - Trilha EaD</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header id="topo"></header>
+
+  <main class="container">
+    <h1>Administração</h1>
+    <div id="numeros" class="numeros"></div>
+
+    <div class="abas">
+      <button data-aba="usuarios">Usuários</button>
+      <button data-aba="cursos">Cursos</button>
+      <button data-aba="pagamentos">Pagamentos</button>
+      <button data-aba="eventos">Eventos</button>
+      <button data-aba="acessos">Acessos</button>
+    </div>
+
+    <section id="aba-usuarios" class="aba caixa">
+      <input id="busca-usuario" placeholder="Buscar por nome ou e-mail" style="max-width:320px;margin-bottom:14px">
+      <table class="tabela">
+        <thead><tr><th>Nome</th><th>E-mail</th><th>Cadastro</th><th>Papel</th></tr></thead>
+        <tbody id="tabela-usuarios"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-cursos" class="aba caixa" hidden>
+      <table class="tabela">
+        <thead><tr><th>Curso</th><th>Professor</th><th>Preço</th><th>Situação</th><th></th></tr></thead>
+        <tbody id="tabela-cursos"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-pagamentos" class="aba caixa" hidden>
+      <table class="tabela">
+        <thead><tr><th>Nº</th><th>Data</th><th>Aluno</th><th>Curso</th><th>Forma</th><th>Valor</th><th>Situação</th></tr></thead>
+        <tbody id="tabela-pagamentos"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-eventos" class="aba caixa" hidden>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <p class="meta" style="margin:0">Fila "eventos" (Supabase Queues). Mostra os últimos 30.</p>
+        <button class="btn-sec btn-pequeno" id="processar">Processar fila agora</button>
+      </div>
+      <table class="tabela">
+        <thead><tr><th>Nº</th><th>Data</th><th>Evento</th><th>Dados</th><th>Situação</th></tr></thead>
+        <tbody id="tabela-eventos"></tbody>
+      </table>
+    </section>
+
+    <section id="aba-acessos" class="aba caixa" hidden>
+      <p class="meta">Histórico de acesso e progresso (gravado em JSONB).</p>
+      <table class="tabela">
+        <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Detalhes</th></tr></thead>
+        <tbody id="tabela-acessos"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
