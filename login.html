@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar - Trilha EaD</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header id="topo"></header>
+
+  <main class="container">
+    <div class="caixa caixa-estreita">
+      <h1>Entrar</h1>
+      <form id="form-login">
+        <label>E-mail <input type="email" id="email" required autocomplete="email"></label>
+        <label>Senha <input type="password" id="senha" required autocomplete="current-password"></label>
+        <p id="erro" class="msg-erro"></p>
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+      <p class="meta" style="margin-top:18px">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

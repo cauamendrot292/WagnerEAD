@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar exercício - Trilha EaD</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header id="topo"></header>
+
+  <main class="container">
+    <p><a id="voltar" href="professor.html">&larr; Voltar ao curso</a></p>
+    <h1 id="titulo-pagina">Exercício</h1>
+    <p class="meta" id="modulo"></p>
+
+    <div class="caixa">
+      <h2>Dados do exercício</h2>
+      <form id="form-dados">
+        <div class="linha">
+          <label>Título <input id="titulo" required></label>
+          <label style="flex:0 0 160px">Nota mínima (0 a 10) <input id="nota" type="number" min="0" max="10" step="0.5"></label>
+        </div>
+        <button class="btn btn-pequeno" type="submit">Salvar</button>
+      </form>
+    </div>
+
+    <div class="caixa">
+      <h2>Questões</h2>
+      <div id="questoes"><p class="vazio">Carregando...</p></div>
+    </div>
+
+    <div class="caixa">
+      <h2>Nova questão</h2>
+      <form id="form-questao">
+        <label>Enunciado <textarea id="enunciado" rows="2" required></textarea></label>
+        <label style="max-width:240px">Tipo
+          <select id="tipo">
+            <option value="multipla">Múltipla escolha</option>
+            <option value="dissertativa">Dissertativa</option>
+          </select>
+        </label>
+        <div id="campos-alternativas">
+          <p class="meta">Preencha as alternativas e marque a correta.</p>
+          <div class="campo-alternativa"><input type="radio" name="correta" checked> <input type="text" placeholder="Alternativa A"></div>
+          <div class="campo-alternativa"><input type="radio" name="correta"> <input type="text" placeholder="Alternativa B"></div>
+          <div class="campo-alternativa"><input type="radio" name="correta"> <input type="text" placeholder="Alternativa C"></div>
+          <div class="campo-alternativa"><input type="radio" name="correta"> <input type="text" placeholder="Alternativa D"></div>
+        </div>
+        <button class="btn" type="submit">Adicionar questão</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/editar-atividade.js"></script>
+</body>
+</html>

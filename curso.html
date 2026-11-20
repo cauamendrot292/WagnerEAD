@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso - Trilha EaD</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header id="topo"></header>
+
+  <main class="container">
+    <div id="conteudo">
+      <p class="vazio">Carregando...</p>
+    </div>
+
+    <div id="modal-pagamento" class="modal" hidden>
+      <div class="modal-caixa">
+        <h2>Pagamento</h2>
+        <p id="pag-resumo" class="meta"></p>
+        <div class="metodos">
+          <label><input type="radio" name="metodo" value="cartao" checked> Cartão de crédito</label>
+          <label><input type="radio" name="metodo" value="pix"> Pix</label>
+        </div>
+        <div id="area-cartao">
+          <label>Número do cartão <input id="cartao" inputmode="numeric" maxlength="23" placeholder="0000 0000 0000 0000"></label>
+          <div class="linha">
+            <label>Validade <input id="validade" placeholder="MM/AA" maxlength="5"></label>
+            <label>CVV <input id="cvv" inputmode="numeric" maxlength="4"></label>
+          </div>
+          <label>Nome impresso no cartão <input id="nome-cartao"></label>
+        </div>
+        <div id="area-pix" hidden>
+          <p>Ao confirmar, o Pix é gerado e confirmado na hora (ambiente de testes).</p>
+        </div>
+        <p class="dica">Ambiente de testes: nenhum valor é cobrado. Cartões terminados em 0000 são recusados.</p>
+        <p id="pag-erro" class="msg-erro"></p>
+        <div class="acoes">
+          <button class="btn-sec" id="cancelar" type="button">Cancelar</button>
+          <button class="btn" id="pagar" type="button">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/curso.js"></script>
+</body>
+</html>

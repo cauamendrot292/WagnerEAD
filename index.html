@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha EaD - Cursos online</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header id="topo"></header>
+
+  <main class="container">
+    <section class="chamada">
+      <h1>Aprenda no seu ritmo</h1>
+      <p>Cursos online com videoaulas, exercícios e certificado de conclusão.</p>
+      <input type="search" id="busca" placeholder="Buscar por curso ou professor">
+    </section>
+
+    <h2 class="secao">Cursos disponíveis</h2>
+    <div id="cursos" class="grade-cursos">
+      <p class="vazio">Carregando cursos...</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
