@@ -1,0 +1,14 @@
+{
+  "name": "trilha-transcodificador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Converte os vídeos enviados pelos professores para HLS (360p, 720p e 1080p)",
+  "main": "converter.js",
+  "scripts": {
+    "start": "node --env-file=.env converter.js",
+    "loop": "node --env-file=.env converter.js --loop"
+  },
+  "engines": {
+    "node": ">=20.6"
+  }
+}
